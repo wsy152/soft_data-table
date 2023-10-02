@@ -11,29 +11,59 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# Custom DataTable Widget
 
-## Features
+O **Custom DataTable** é um widget Flutter altamente personalizável que permite criar tabelas de dados de forma flexível e adaptada às suas necessidades. Este widget foi projetado para fornecer controle total sobre a aparência e o comportamento da tabela de dados em seu aplicativo.
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## Recursos Principais
 
-## Getting started
+- **Personalização Total**: Você pode personalizar as colunas, linhas, cores de cabeçalho e cores de células de dados da tabela de acordo com o design do seu aplicativo.
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- **Integração Simples**: Integre facilmente o **Custom DataTable** em seus projetos existentes, proporcionando uma experiência de usuário consistente.
 
-## Usage
+- **Documentação Detalhada**: Incluímos documentação completa e exemplos para ajudar você a aproveitar ao máximo este widget personalizado.
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+## Exemplo de Uso
+
+Aqui está um exemplo de como usar o **Custom DataTable** em seu código Flutter:
 
 ```dart
-const like = 'sample';
-```
+import 'package:flutter/material.dart';
+import 'package:seu_pacote/custom_data_table.dart';
 
-## Additional information
+void main() {
+  runApp(MyApp());
+}
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Exemplo Custom DataTable'),
+        ),
+        body: Center(
+          child: CustomDataTable(
+            columns: [
+              DataColumn(label: Text('Nome')),
+              DataColumn(label: Text('Idade')),
+            ],
+            rows: [
+              DataRow(cells: [
+                DataCell(Text('Alice')),
+                DataCell(Text('28')),
+              ]),
+              DataRow(cells: [
+                DataCell(Text('Bob')),
+                DataCell(Text('32')),
+              ]),
+            ],
+            headerColor: Colors.blue, // Personalize a cor do cabeçalho aqui
+            cellColor: Colors.white,   // Personalize a cor das células de dados aqui
+          ),
+        ),
+      ),
+    );
+  }
+}

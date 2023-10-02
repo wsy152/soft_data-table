@@ -1,6 +1,6 @@
 name: soft_data_table
-description: A new Flutter package project.
-version: 0.0.1
+description: Soft dataTable.
+version: 0.0.2
 homepage: https://github.com/wsy152/soft_data-table
 
 environment:
@@ -10,6 +10,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  platforms:
+  android: any
+  ios: any
+  linux: any
+  windows: any
+  mac: any
+  web: any
+
+
 
 dev_dependencies:
   flutter_test:
